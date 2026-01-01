@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Bio:Reform - Main</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/bioreform/css/bootstrap.min.used-only.css">
+  <link rel="stylesheet" href="/bioreform/css/font-awesome.css">
+  <link rel="stylesheet" href="/bioreform/css/templatemo-training-studio.css">
+
+  <style>
+    .main-nav .nav li a {
+      transition: color 0.3s !important;
+      color: #000000 !important;
+    }
+
+    .main-nav .nav li a:hover,
+    .header-area.header-sticky.scrolled nav li a:hover {
+      color: #ed563b !important;
+    }
+
+    .news-container {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .news-section {
+      margin-top: 100px;
+      margin-bottom: 60px;
+    }
+
+    .news-section h2 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      background-color: #fff;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 180px;
+      background-color: #ccc;
+      margin-bottom: 12px;
+      border-radius: 4px;
+    }
+
+    .card p {
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .card button {
+      padding: 8px 14px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('.header-area.header-sticky');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- 로고 -->
+            <a href="/bioreform/index.html" class="logo"><em>Bio</em>:<em>Reform</em></a>
+
+            <!-- 메뉴 -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="/bioreform/community.html">커뮤니티</a></li>
+              <li class="scroll-to-section"><a href="/bioreform/notice.html">공지사항</a></li>
+              <li class="scroll-to-section"><a href="/bioreform/product-news.html">제품 뉴스</a></li> <!-- ✅ 실제 페이지 연결 -->
+            </ul>
+
+            <!-- 로그인/회원가입 버튼 -->
+            <div class="nav-right">
+              <a href="/bioreform/myPage.html">마이페이지</a>
+              <a href="/bioreform/signIn.html" class="main-button">Sign In</a>
+              <a href="/bioreform/signUp.html" class="main-button">Sign Up</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="news-container">
+
+    <section class="news-section">
+      <h2>🧡 인기 제품 뉴스</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="image-placeholder"></div>
+          <p>비타민C 신제품 출시</p>
+          <button>자세히 보기</button>
+        </div>
+        <div class="card">
+          <div class="image-placeholder"></div>
+          <p>비타민D 신제품 출시</p>
+          <button>자세히 보기</button>
+        </div>
+        <div class="card">
+          <div class="image-placeholder"></div>
+          <p>비타민B 신제품 출시</p>
+          <button>자세히 보기</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-section">
+      <h2>❤️ 최신 제품 뉴스</h2>
+      <div class="card-grid">
+        <!-- 동일하게 3개 반복 -->
+        <div class="card">
+          <div class="image-placeholder"></div>
+          <p>비타민C 신제품 출시</p>
+          <button>자세히 보기</button>
+        </div>
+        <div class="card">
+          <div class="image-placeholder"></div>
+          <p>비타민D 신제품 출시</p>
+          <button>자세히 보기</button>
+        </div>
+        <div class="card">
+          <div class="image-placeholder"></div>
+          <p>비타민B 신제품 출시</p>
+          <button>자세히 보기</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-section">
+      <h2>🧡 가성비 제품 뉴스</h2>
+      <div class="card-grid">
+        <!-- 동일하게 3개 반복 -->
+        <div class="card">
+          <div class="image-placeholder"></div>
+          <p>비타민C 신제품 출시</p>
+          <button>자세히 보기</button>
+        </div>
+        <div class="card">
+          <div class="image-placeholder"></div>
+          <p>비타민D 신제품 출시</p>
+          <button>자세히 보기</button>
+        </div>
+        <div class="card">
+          <div class="image-placeholder"></div>
+          <p>비타민B 신제품 출시</p>
+          <button>자세히 보기</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 푸터 영역 -->
+  <footer>
+    <!-- 이메일 구독 -->
+    <div class="newsletter">
+      <h3>이메일로 최신 건강 정보와 할인 소식을 받아보세요!</h3>
+      <input type="email" placeholder="이메일 주소 입력">
+      <button>신청하기</button>
+    </div>
+
+    <div class="footer-top">
+      <!-- 회사 소개 -->
+      <div class="footer-section">
+        <h3>Bio:ReForm</h3>
+        <p>건강한 삶을 위한 최고의 선택! <br> 믿을 수 있는 영양제 정보와 커뮤니티를 제공합니다.</p>
+      </div>
+
+      <!-- 회사 정보 -->
+      <div class="footer-section">
+        <h3>회사 정보</h3>
+        <ul>
+          <li><a href="#">회사 소개</a></li>
+          <li><a href="#">공지사항</a></li>
+          <li><a href="#">제휴 프로그램</a></li>
+        </ul>
+      </div>
+
+      <!-- SNS -->
+      <div class="footer-section">
+        <h3>팔로우하세요</h3>
+        <div class="social-icons">
+          <a href="#"><img src="/bioreform/images/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="/bioreform/images/youtube.png" alt="YouTube"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 하단 저작권 -->
+    <div class="footer-bottom">
+      <p>© 2025 Uk-Ji. 모든 권리 보유.</p>
+      <ul>
+        <li><a href="#">개인정보 처리방침</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">자주 묻는 질문</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+
+</html>

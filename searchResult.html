@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/bioreform/css/bootstrap.min.used-only.css">
+    <link rel="stylesheet" type="text/css" href="/bioreform/css/font-awesome.css">
+    <link rel="stylesheet" href="/bioreform/css/templatemo-training-studio.css">
+
+    <title>Bio:ReForm</title>
+
+    <style>
+        /* ===============================
+        ✅ 제품 검색 결과 페이지 스타일
+        =============================== */
+
+        body {
+        margin: 0;
+        font-family: 'Poppins', sans-serif;
+        background: #fff;
+        color: #333;
+        }
+
+        header, .container {
+            background-color: #ffffff !important;
+        }
+
+        .main-nav .nav li a {
+            transition: color 0.3s !important;
+            color: #000000 !important;
+        }
+
+        .main-nav .nav li a:hover,
+        .header-area.header-sticky.scrolled nav li a:hover {
+            color: #ed563b !important;
+        }
+
+        .search-header {
+        text-align: center;
+        padding: 30px 20px 10px;
+        }
+
+        .search-bar {
+        width: 60%;
+        padding: 14px 20px;
+        font-size: 16px;
+        border-radius: 30px;
+        border: 1px solid #ccc;
+        outline: none;
+        margin-bottom: 10px;
+        }
+
+        .search-info {
+        color: #666 !important;
+        font-size: 14px;
+        margin-top: 4px;
+        }
+
+        .search-result-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 30px 5%;
+        gap: 30px;
+        margin-top: 100px;
+        }
+
+        .column {
+        flex: 1;
+        background-color: #f9f9f9;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .column h3 {
+        font-size: 20px;
+        margin-bottom: 16px;
+        }
+
+        .category-group h4 {
+        font-size: 16px;
+        margin: 12px 0 6px;
+        color: #444;
+        }
+
+        .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+        margin-bottom: 12px;
+        }
+
+        .product-card {
+        background-color: #fff;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 13px;
+        text-align: center;
+        }
+
+        .more-link {
+        display: block;
+        margin-top: 10px;
+        color: #ed563b;
+        font-weight: bold;
+        text-decoration: none;
+        }
+
+        .more-link:hover {
+        text-decoration: underline;
+        }
+
+        .community-section ul {
+        padding-left: 0;
+        list-style: none;
+        }
+
+        .community-section li {
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        }
+
+        .community-section li a {
+        color: #333;
+        text-decoration: none;
+        }
+
+        .community-section li span {
+        color: #888;
+        }
+
+        .chatbot-section p {
+        font-size: 14px;
+        line-height: 1.6;
+        color: #000000 !important;
+        }
+
+        @media screen and (max-width: 900px) {
+        .search-result-container {
+            flex-direction: column;
+        }
+
+        .search-bar {
+            width: 90%;
+        }
+        }
+    </style>
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.header-area.header-sticky');
+            if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+            } else {
+            header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    </head>
+    <body>
+    <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- 로고 -->
+            <a href="/bioreform/index.html" class="logo"><em>Bio</em>:<em>Reform</em></a>
+
+            <!-- 메뉴 -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="/bioreform/community.html">커뮤니티</a></li>
+              <li class="scroll-to-section"><a href="/bioreform/notice.html">공지사항</a></li>
+              <li class="scroll-to-section"><a href="/bioreform/product-news.html">제품 뉴스</a></li> <!-- ✅ 실제 페이지 연결 -->
+            </ul>
+
+            <!-- 로그인/회원가입 버튼 -->
+            <div class="nav-right">
+              <a href="/bioreform/myPage.html">마이페이지</a>
+              <a href="/bioreform/signIn.html" class="main-button">Sign In</a>
+              <a href="/bioreform/signUp.html" class="main-button">Sign Up</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+    <!-- ***** Header Area End ***** -->
+
+    <main class="search-result-container">
+        <!-- ✅ 검색창 영역 (main 내부) -->
+        <section class="search-input-section">
+            <input type="text" placeholder="🔍 Search" class="search-bar" />
+            <p class="search-info">🔎 "검색어"에 대한 정보 생성중...</p>
+        </section>
+
+        <!-- 1. 제품 결과 영역 -->
+        <section class="column product-section">
+            <h3>🔍 검색어 관련 제품 정보</h3>
+            <div class="category-group">
+                <h4>네이버 스마트스토어</h4>
+                <div class="product-grid">
+                <div class="product-card">제품 이름<br><small>가격</small></div>
+                <div class="product-card">제품 이름<br><small>가격</small></div>
+                <div class="product-card">제품 이름<br><small>가격</small></div>
+                </div>
+
+                <h4>옥션</h4>
+                <div class="product-grid">
+                <div class="product-card">제품 이름<br><small>가격</small></div>
+                <div class="product-card">제품 이름<br><small>가격</small></div>
+                <div class="product-card">제품 이름<br><small>가격</small></div>
+                </div>
+
+                <h4>지마켓</h4>
+                <div class="product-grid">
+                <div class="product-card">제품 이름<br><small>가격</small></div>
+                <div class="product-card">제품 이름<br><small>가격</small></div>
+                <div class="product-card">제품 이름<br><small>가격</small></div>
+                </div>
+            </div>
+            <a href="/productdetail" class="more-link">제품 정보 더보기 ></a>
+        </section>
+
+        <!-- 2. 커뮤니티 영역 -->
+        <section class="column community-section">
+            <h3>💬 커뮤니티 인기 글</h3>
+            <ul class="post-list">
+                <li><a href="#">검색어 제품 후기</a><span>조회 100</span></li>
+                <li><a href="#">검색어 제품 추천</a><span>조회 100</span></li>
+                <li><a href="#">검색어 제품 리뷰</a><span>조회 100</span></li>
+                <li><a href="#">검색어 제품 후기</a><span>조회 100</span></li>
+            </ul>
+            <a href="/community" class="more-link">커뮤니티 더보기 ></a>
+        </section>
+
+        <!-- 3. ChatBot 영역 -->
+        <section class="column chatbot-section">
+            <h3>🤖 ChatBot이 생성한 요약</h3>
+            <p>
+                30대 여성의 관심을 끄는 제품으로 리뷰 트렌드에 있는 **검색어** 제품은 인지 개선, 스트레스 완화, 면역력 향상에 도움을 줄 수 있다는 후기가 많습니다. 복용자들의 다수는 섭취 후 1주일 이내에 집중력 향상, 수면 질 개선 등의 변화를 느꼈다고 응답했으며, 성분 중 **키워드 A**와 **키워드 B**가 주요 효능에 영향을 준다고 분석되었습니다.
+            </p>
+        </section>
+    </main>
+
+        <!-- ✅ 푸터 -->
+    <footer>
+        <!-- 이메일 구독 -->
+        <div class="newsletter">
+            <h3>이메일로 최신 건강 정보와 할인 소식을 받아보세요!</h3>
+            <input type="email" placeholder="이메일 주소 입력">
+            <button>신청하기</button>
+        </div>
+
+        <div class="footer-top">
+            <!-- 회사 소개 -->
+            <div class="footer-section">
+                <h3>Bio:ReForm</h3>
+                <p>건강한 삶을 위한 최고의 선택! <br> 믿을 수 있는 영양제 정보와 커뮤니티를 제공합니다.</p>
+            </div>
+    
+            <!-- 유용한 링크 -->
+            <div class="footer-section">
+                <h3>회사 정보</h3>
+                <ul>
+                    <li><a href="/company">회사 소개</a></li>
+                    <li><a href="/notice">공지사항</a></li>
+                    <li><a href="#">제휴 프로그램</a></li>
+                </ul>
+            </div>
+    
+            <!-- SNS & 앱 다운로드 -->
+            <div class="footer-section">
+                <h3>팔로우하세요</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="/bioreform/images/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="/bioreform/images/youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- 저작권 및 정책 -->
+        <div class="footer-bottom">
+            <p>© 2025 Uk-ji. 모든 권리 보유. 모든 권한은 Uk-ji에 있습니다.</p>
+            <ul>
+                <li><a href="#">개인정보 처리방침</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">자주 묻는 질문</a></li>
+            </ul>
+        </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>글쓰기 – Bio:ReForm 커뮤니티</title>
+
+  <!-- 템플릿 CSS 유지 -->
+  <link rel="stylesheet" href="/bioreform/css/bootstrap.min.used-only.css">
+  <link rel="stylesheet" href="/bioreform/css/templatemo-training-studio.css">
+
+  <!-- inline CSS -->
+  <style>
+    /* 1) 헤더 고정 & 본문 오프셋 */
+    header.header-area {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    header, .container {
+      background-color: #ffffff !important;
+    }
+
+    .main-nav .nav li a {
+        transition: color 0.3s !important;
+        color: #000000 !important;
+    }
+
+    .main-nav .nav li a:hover,
+    .header-area.header-sticky.scrolled nav li a:hover {
+        color: #ed563b !important;
+    }
+
+    body {
+      padding-top: 80px;
+    }
+
+    /* 2) info-box */
+    .info-box {
+      border: 1px solid #ddd;
+      background: #fafafa;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-box h2 {
+      margin: 0 0 .5rem;
+      font-size: 1.75rem;
+    }
+
+    .info-box p {
+      margin: 0;
+      color: #555 !important;
+    }
+
+    /* 3) 글쓰기 폼 영역 */
+    .community-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    #post-form select,
+    #post-form input,
+    #post-form textarea {
+      width: 100%;
+      padding: .5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    #post-form label {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      cursor: pointer;
+    }
+
+    #post-form input[type="file"] {
+      display: none;
+    }
+
+    #imagePreview {
+      display: none;
+      max-width: 200px;
+      margin-top: .5rem;
+      border: 1px solid #ddd;
+    }
+
+    .post-bottom {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .post-bottom .btn.btn-primary {
+      margin-top: .5rem;
+      margin-left: auto;
+    }
+
+    @media (max-width: 768px) {
+      .community-container {
+        padding: .5rem;
+      }
+
+      .info-box {
+        margin: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 기존 헤더 -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <a href="/bioreform/index.html" class="logo"><em>Bio</em>:<em>Reform</em></a>
+            <ul class="nav">
+              <li><a href="/bioreform/community.html">커뮤니티</a></li>
+              <li><a href="/bioreform/notice.html">공지사항</a></li>
+              <li><a href="/bioreform/product-news.html">제품뉴스</a></li>
+            </ul>
+            <div class="nav-right">
+              <a href="/bioreform/myPage.html" class="main-button">MyPage</a>
+              <a href="/bioreform/signIn.html" class="main-button">Sign In</a>
+              <a href="/bioreform/signUp.html" class="main-button">Sign Up</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ① info-box와 폼을 .community-container 안으로 이동 -->
+  <main class="community-container">
+    <!-- info-box -->
+    <div class="info-box">
+      <h2>커뮤니티</h2>
+      <p>건강 관련 정보에 대한 다양한 정보를 나누는 곳입니다.</p>
+    </div>
+
+    <!-- 글쓰기 폼 -->
+    <h2>게시글 작성</h2>
+    <form id="post-form">
+      <select id="categorySelect">
+        <option value="">게시판 선택</option>
+        <option>자유</option>
+        <option>정보</option>
+        <option>질문</option>
+        <option>후기</option>
+      </select>
+      <input id="titleInput" type="text" placeholder="제목을 입력하세요">
+      <textarea id="contentInput" rows="8" placeholder="내용을 입력하세요"></textarea>
+      <div class="post-bottom">
+        <label>
+          <i class="fa fa-image"></i> 사진 첨부
+          <input id="imageInput" type="file" accept="image/*">
+        </label>
+        <img id="imagePreview" alt="미리보기">
+        <button type="submit" class="btn btn-primary">등록</button>
+      </div>
+    </form>
+  </main>
+
+  <!-- 기존 푸터 -->
+  <footer>
+    <!-- 이메일 구독 -->
+    <div class="newsletter">
+      <h3>이메일로 최신 건강 정보와 할인 소식을 받아보세요!</h3>
+      <input type="email" placeholder="이메일 주소 입력">
+      <button>신청하기</button>
+    </div>
+
+    <div class="footer-top">
+      <!-- 회사 소개 -->
+      <div class="footer-section">
+        <h3>Bio:ReForm</h3>
+        <p>건강한 삶을 위한 최고의 선택! <br> 믿을 수 있는 영양제 정보와 커뮤니티를 제공합니다.</p>
+      </div>
+
+      <!-- 유용한 링크 -->
+      <div class="footer-section">
+        <h3>회사 정보</h3>
+        <ul>
+          <li><a href="/company">회사 소개</a></li>
+          <li><a href="/bioreform/notice.html">공지사항</a></li>
+          <li><a href="#">제휴 프로그램</a></li>
+        </ul>
+      </div>
+
+      <!-- SNS & 앱 다운로드 -->
+      <div class="footer-section">
+        <h3>팔로우하세요</h3>
+        <div class="social-icons">
+          <a href="#"><img src="/bioreform/images/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="/bioreform/images/youtube.png" alt="YouTube"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 저작권 및 정책 -->
+    <div class="footer-bottom">
+      <p>© 2025 Uk-ji. 모든 권리 보유. 모든 권한은 Uk-ji에 있습니다.</p>
+      <ul>
+        <li><a href="#">개인정보 처리방침</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">자주 묻는 질문</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- inline JS -->
+  <script>
+    window.addEventListener('scroll', function () {
+            const header = document.querySelector('.header-area.header-sticky');
+            if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+            } else {
+            header.classList.remove('scrolled');
+            }
+        });
+    (() => {
+      const key = 'community_posts';
+      let posts = JSON.parse(localStorage.getItem(key) || 'null');
+      if (!posts) { posts = []; localStorage.setItem(key, JSON.stringify(posts)); }
+      function save() { localStorage.setItem(key, JSON.stringify(posts)); }
+
+      const form = document.getElementById('post-form'),
+        sel = document.getElementById('categorySelect'),
+        ti = document.getElementById('titleInput'),
+        co = document.getElementById('contentInput'),
+        img = document.getElementById('imageInput'),
+        prev = document.getElementById('imagePreview');
+      let previewData = null;
+
+      img.onchange = e => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const r = new FileReader();
+        r.onload = ev => {
+          previewData = ev.target.result;
+          prev.src = previewData;
+          prev.style.display = 'block';
+        };
+        r.readAsDataURL(file);
+      };
+
+      form.onsubmit = e => {
+        e.preventDefault();
+        if (!sel.value || !ti.value.trim() || !co.value.trim()) {
+          return alert('모든 항목을 입력해주세요.');
+        }
+        const newId = posts.length ? Math.max(...posts.map(p => p.id)) + 1 : 1;
+        posts.unshift({
+          id: newId,
+          category: sel.value,
+          title: ti.value.trim(),
+          author: '로그인한닉네임',
+          date: new Date().toISOString(),
+          views: 0, comments: 0, likes: 0,
+          thumbnail: previewData || '',
+          content: co.value.trim()
+        });
+        save();
+        location.href = '/detail?id=' + newId;
+      };
+    })();
+  </script>
+</body>
+
+</html>

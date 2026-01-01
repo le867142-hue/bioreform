@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>커뮤니티 - Bio:ReForm</title>
+
+  <!-- 외부 템플릿 CSS (유지) -->
+  <link rel="stylesheet" href="/bioreform/css/bootstrap.min.used-only.css">
+  <link rel="stylesheet" href="/bioreform/css/templatemo-training-studio.css">
+
+  <!-- ↓ inline community.css ↓ -->
+  <style>
+    /* --------- community.css 시작 --------- */
+    /* 1) 헤더를 화면 상단에 고정 */
+    header.header-area {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      /* 본문보다 위에 올라오도록 */
+    }
+
+    /* 2) 본문이 헤더 아래에서 시작하도록 패딩 추가 */
+    body {
+      padding-top: 80px;
+      /* 헤더 실제 높이만큼 조정 (예: 80px) */
+    }
+
+    header, .container {
+      background-color: #ffffff !important;
+    }
+
+    .main-nav .nav li a {
+        transition: color 0.3s !important;
+        color: #000000 !important;
+    }
+
+    .main-nav .nav li a:hover,
+    .header-area.header-sticky.scrolled nav li a:hover {
+        color: #ed563b !important;
+    }
+
+    .community-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .info-box {
+      border: 1px solid #ddd;
+      background: #fafafa;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-box h2 {
+      margin: 0 0 .5rem;
+      font-size: 1.75rem;
+    }
+
+    .info-box p {
+      margin: 0;
+      color: #555 !important;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      margin-bottom: 1rem;
+    }
+
+    .controls .btn {
+      flex-shrink: 0;
+      justify-content: flex-end;
+    }
+
+    .category-tabs {
+      flex: 1;
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow-x: auto;
+    }
+    .category-tabs li {
+      margin-right: .5rem;
+    }
+
+    .category-tabs button {
+      background: none;
+      border: none;
+      padding: .5rem 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+      border-bottom: 2px solid transparent;
+    }
+
+    .category-tabs button.active {
+      color: #ed563b !important;
+      border-color: #ed563b !important;
+    }
+
+    .search-filter {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+      align-items: center;
+    }
+
+    /* 검색 타입 select 너비 */
+    .search-filter select {
+      flex: 0 0 120px;
+      /* 고정 폭 */
+    }
+
+    .search-filter input {
+      flex: 1 1 200px;
+      /* 최소 200px, 최대 남은 공간 */
+      padding: .5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .search-filter .btn {
+      padding: .5rem 1rem;
+    }
+
+    .post-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+    }
+
+    .post-thumb {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      margin-right: 1rem;
+      background: #f0f0f0;
+      flex-shrink: 0;
+    }
+
+    .post-thumb.empty {
+      background: transparent;
+      /* 배경 없애고 */
+      border: 1px solid #ccc;
+      /* 깔끔한 회색 테두리 */
+      object-fit: unset;
+      /* 불필요한 오브젝트핏 해제 */
+    }
+
+    .post-info h5 {
+      margin: 0 0 .25rem;
+      font-size: 1.125rem;
+    }
+
+    .post-meta {
+      margin: 0;
+      font-size: .875rem;
+      color: #666;
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin: 1.5rem 0;
+    }
+
+    .pagination button {
+      border: 1px solid #ccc;
+      background: #fff;
+      margin: 0 .25rem;
+      padding: .5rem .75rem;
+      cursor: pointer;
+    }
+
+    .pagination button.active {
+      background: #007bff;
+      color: #fff;
+      border-color: #007bff;
+    }
+
+    .best-box {
+      border: 1px solid #eee;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      background: #fff;
+    }
+
+    .best-box h4 {
+      margin-bottom: .75rem;
+      font-size: 1.25rem;
+    }
+
+    .best-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .best-box li {
+      margin-bottom: .5rem;
+    }
+
+    .best-box a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .best-box a:hover {
+      text-decoration: underline;
+    }
+
+    .banner-placeholder {
+      width: 100%;
+      padding-top: 56%;
+      position: relative;
+      background: #f0f0f0;
+      text-align: center;
+      color: #888;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .banner-placeholder p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+    }
+
+    .row>.col-lg-3,
+    .row>.col-md-4 {
+      padding-left: .5rem;
+      padding-right: .5rem;
+    }
+
+    @media (max-width:992px) {
+      .col-md-12 .banner-placeholder {
+        margin-top: 1.5rem;
+      }
+    }
+
+    @media (max-width:768px) {
+      .controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-filter {
+        flex-direction: column;
+      }
+
+      .post-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .post-thumb {
+        margin-bottom: .5rem;
+      }
+
+      .banner-placeholder {
+        padding-top: 40%;
+        margin-top: 1.5rem;
+      }
+    }
+
+    /* --------- community.css 끝 --------- */
+  </style>
+</head>
+
+<body>
+
+  <!-- (헤더 그대로 복사) -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- 로고 -->
+            <a href="/bioreform/index.html" class="logo"><em>Bio</em>:<em>Reform</em></a>
+
+            <!-- 가운데 메뉴 (ul) -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="/bioreform/community.html">커뮤니티</a></li>
+              <li class="scroll-to-section"><a href="/bioreform/notice.html">공지사항</a></li>
+              <li class="scroll-to-section"><a href="/bioreform/product-news.html">제품뉴스</a></li>
+            </ul>
+
+            <!-- 오른쪽 버튼 (ul 밖에 있어야 함) -->
+            <div class="nav-right">
+              <a href="/bioreform/myPage.html" class="main-button">MyPage</a>
+              <a href="/bioreform/signIn.html" class="main-button">Sign In</a>
+              <a href="/bioreform/signUp.html" class="main-button">Sign Up</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="community-container">
+    <!-- 1) 상단 정보 상자 -->
+    <div class="info-box">
+      <h2>커뮤니티</h2>
+      <p>건강 관련 정보에 대한 다양한 정보를 나누는 곳입니다.</p>
+    </div>
+
+    <!-- 2) 글쓰기 버튼 + 카테고리 탭 -->
+    <div class="controls">
+      <ul class="category-tabs"></ul>
+      <button id="writeBtn" class="btn btn-outline-primary" onclick="location.href='/bioreform/write.html'">글쓰기</button>
+    </div>
+
+    <!-- 3) 검색 상자 -->
+    <div class="search-filter">
+      <!-- 검색 유형 선택 -->
+      <select id="searchType" class="form-select">
+        <option value="all">제목+내용</option>
+        <option value="title">제목</option>
+        <option value="content">내용</option>
+        <option value="author">작성자</option>
+      </select>
+
+      <!-- 입력창 placeholder 변경, 폭 조정 -->
+      <input id="searchInput" type="text" placeholder="커뮤니티 내 검색">
+
+      <button id="searchBtn" class="btn btn-secondary">검색</button>
+    </div>
+
+    <!-- 4) 본문: 좌/우 영역 -->
+    <div class="row">
+      <!-- ① 왼쪽 사이드바: Best 게시글 -->
+      <div class="col-lg-3 col-md-4 mb-4">
+        <div class="best-box">
+          <h4>Best 게시글</h4>
+          <ul id="best-list"><!-- JS가 채워줌 --></ul>
+        </div>
+      </div>
+
+      <!-- ② 가운데 메인: 글 목록 + 페이징 -->
+      <div class="col-lg-6 col-md-8">
+        <div id="post-list"></div>
+        <div id="pagination" class="pagination"></div>
+      </div>
+  </main>
+
+  <footer>
+    <!-- 이메일 구독 -->
+    <div class="newsletter">
+      <h3>이메일로 최신 건강 정보와 할인 소식을 받아보세요!</h3>
+      <input type="email" placeholder="이메일 주소 입력">
+      <button>신청하기</button>
+    </div>
+
+    <div class="footer-top">
+      <!-- 회사 소개 -->
+      <div class="footer-section">
+        <h3>Bio:ReForm</h3>
+        <p>건강한 삶을 위한 최고의 선택! <br> 믿을 수 있는 영양제 정보와 커뮤니티를 제공합니다.</p>
+      </div>
+
+      <!-- 유용한 링크 -->
+      <div class="footer-section">
+        <h3>회사 정보</h3>
+        <ul>
+          <li><a href="/bioreform/company">회사 소개</a></li>
+          <li><a href="/bioreform/notice.html">공지사항</a></li>
+          <li><a href="#">제휴 프로그램</a></li>
+        </ul>
+      </div>
+
+      <!-- SNS & 앱 다운로드 -->
+      <div class="footer-section">
+        <h3>팔로우하세요</h3>
+        <div class="social-icons">
+          <a href="#"><img src="/bioreform/images/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="/bioreform/images/youtube.png" alt="YouTube"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 저작권 및 정책 -->
+    <div class="footer-bottom">
+      <p>© 2025 Uk-ji. 모든 권리 보유. 모든 권한은 Uk-ji에 있습니다.</p>
+      <ul>
+        <li><a href="#">개인정보 처리방침</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">자주 묻는 질문</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ↓ inline community.js ↓ -->
+  <script>
+    window.addEventListener('scroll', function () {
+            const header = document.querySelector('.header-area.header-sticky');
+            if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+            } else {
+            header.classList.remove('scrolled');
+            }
+        });
+    // --------- community.js 시작 ---------
+    (() => {
+      const storageKey = 'community_posts';
+      let posts = JSON.parse(localStorage.getItem(storageKey) || 'null');
+
+      // 더미 데이터 초기화
+      if (!posts) {
+        const cats = ['자유', '정보', '질문', '후기'];
+        posts = [];
+        for (let i = 1; i <= 25; i++) {
+          const cat = cats[i % cats.length];
+          posts.push({
+            id: i,
+            category: cat,
+            title: `샘플 ${cat} 글 ${i}`,
+            author: `사용자${i}`,
+            date: new Date(2025, 6, (i % 30) + 1, 9 + (i % 12), (i * 3) % 60).toISOString(),
+            views: Math.floor(Math.random() * 100),
+            comments: Math.floor(Math.random() * 10),
+            likes: Math.floor(Math.random() * 50),
+            thumbnail: 'https://via.placeholder.com/60',
+            content: `이것은 샘플 콘텐츠 ${i}입니다.\n여러 줄도 지원해요.`
+          });
+        }
+        localStorage.setItem(storageKey, JSON.stringify(posts));
+      }
+
+      function save() {
+        localStorage.setItem(storageKey, JSON.stringify(posts));
+      }
+
+      function formatDate(iso) {
+        const d = new Date(iso);
+        const MM = String(d.getMonth() + 1).padStart(2, '0');
+        const DD = String(d.getDate()).padStart(2, '0');
+        const hh = String(d.getHours()).padStart(2, '0');
+        const mm = String(d.getMinutes()).padStart(2, '0');
+        return `${d.getFullYear()}.${MM}.${DD} ${hh}:${mm}`;
+      }
+
+      /* --- 커뮤니티 목록 페이지 초기화 --- */
+      function initList() {
+        const tabs = document.querySelector('.category-tabs');
+        const listEl = document.getElementById('post-list');
+        const pagEl = document.getElementById('pagination');
+        const bestEl = document.getElementById('best-list');
+        const searchType = document.getElementById('searchType');
+        const searchIn = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const writeBtn = document.getElementById('writeBtn');
+
+        const categories = ['전체', '자유', '정보', '질문', '후기'];
+        let currentCat = '전체';
+        let currentPage = 1;
+        const perPage = 10;
+        let currentKeyword = '';
+        let currentType = 'tc';  // 'tc' | 'title' | 'content' | 'author'
+
+        // 글쓰기 이동
+        writeBtn.onclick = () => {
+          location.href = '/write.html';
+        };
+
+        // 검색 버튼 로직
+        searchBtn.onclick = () => {
+          const raw = searchIn.value.trim();
+          if (!raw) {
+            alert('검색어를 입력해주세요.');
+            return;
+          }
+          // 제목, 내용, 제목+내용(searchType 'tc') 에 대해서 2글자 이상
+          if (searchType.value !== 'author' && raw.length < 2) {
+            alert('검색어는 2글자 이상 입력해주세요.');
+            return;
+          }
+          currentKeyword = raw.toLowerCase();
+          currentType = searchType.value;
+          currentPage = 1;
+          renderAll();
+        };
+
+        // Enter 키로 검색
+        [searchIn, searchType].forEach(el => {
+          el.addEventListener('keydown', e => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              searchBtn.click();
+            }
+          });
+        });
+
+        // 카테고리 탭 렌더링
+        function renderCategories() {
+          tabs.innerHTML = '';
+          categories.forEach(cat => {
+            const btn = document.createElement('button');
+            btn.textContent = cat;
+            btn.className = (cat === currentCat ? 'active' : '');
+            btn.onclick = () => {
+              currentCat = cat;
+              currentPage = 1;
+              renderAll();
+            };
+            const li = document.createElement('li');
+            li.appendChild(btn);
+            tabs.appendChild(li);
+          });
+        }
+
+        // 게시물 목록 렌더링
+        function renderPosts() {
+          listEl.innerHTML = '';
+          const filtered = posts.filter(p => {
+            // 1) 카테고리 필터
+            const matchCat = (currentCat === '전체' || p.category === currentCat);
+
+            // 2) 검색 필터
+            let matchKw = true;
+            if (currentKeyword) {
+              const kw = currentKeyword;
+
+              if (currentType === 'title') {
+                // 제목만
+                matchKw = p.title.toLowerCase().includes(kw);
+              }
+              else if (currentType === 'content') {
+                // 내용만
+                matchKw = p.content.toLowerCase().includes(kw);
+              }
+              else if (currentType === 'author') {
+                // 작성자 정확 일치
+                matchKw = (p.author.toLowerCase() === kw);
+              }
+              else {
+                // ‘전체’(제목+내용) → 제목 or 내용
+                matchKw =
+                  p.title.toLowerCase().includes(kw) ||
+                  p.content.toLowerCase().includes(kw);
+              }
+            }
+
+            return matchCat && matchKw;
+          });
+
+          const start = (currentPage - 1) * perPage;
+          const slice = filtered.slice(start, start + perPage);
+
+          if (!slice.length) {
+            listEl.innerHTML = '<p class="text-center">등록된 게시물이 없습니다.</p>';
+            return;
+          }
+
+          slice.forEach(p => {
+            const div = document.createElement('div');
+            div.className = 'post-item';
+
+            // 썸네일 유무에 따라 <img> 또는 <div> 생성
+            const thumbHTML = (p.thumbnail && p.thumbnail.trim() !== '')
+              ? `<img src="${p.thumbnail}" class="post-thumb" alt="썸네일">`
+              : `<div class="post-thumb empty"></div>`;
+
+            div.innerHTML = `
+    ${thumbHTML}
+    <div class="post-info">
+      <h5>${p.title}</h5>
+      <p class="post-meta">
+        ${p.author} · ${formatDate(p.date)} · 조회 ${p.views}
+        · 댓글 ${p.comments} · 좋아요 ${p.likes}
+      </p>
+    </div>
+  `;
+            div.onclick = () => {
+              location.href = `/detail?id=${p.id}`;
+            };
+            listEl.appendChild(div);
+          });
+        }
+
+        // 페이징 렌더링
+        function renderPagination() {
+          pagEl.innerHTML = '';
+          const total = posts.filter(p =>
+            currentCat === '전체' || p.category === currentCat
+          ).length;
+          const pages = Math.ceil(total / perPage);
+          for (let i = 1; i <= pages; i++) {
+            const btn = document.createElement('button');
+            btn.textContent = i;
+            if (i === currentPage) btn.classList.add('active');
+            btn.onclick = () => {
+              currentPage = i;
+              renderAll();
+            };
+            pagEl.appendChild(btn);
+          }
+        }
+
+        // Best 게시글 렌더링
+        function renderBest() {
+          bestEl.innerHTML = '';
+          const oneWeekAgo = Date.now() - 7 * 24 * 60 * 60 * 1000;
+          posts
+            .filter(p => new Date(p.date).getTime() >= oneWeekAgo)
+            .sort((a, b) => b.likes - a.likes)
+            .slice(0, 5)
+            .forEach(p => {
+              const li = document.createElement('li');
+              const a = document.createElement('a');
+              a.href = `/detail?id=${p.id}`;
+              a.textContent = p.title;
+              li.appendChild(a);
+              bestEl.appendChild(li);
+            });
+        }
+
+        // 전체 렌더링 호출
+        function renderAll() {
+          renderCategories();
+          renderPosts();
+          renderPagination();
+          renderBest();
+        }
+
+        renderAll();
+      }
+
+      /* --- 글쓰기 페이지 초기화 (기존 로직 유지) --- */
+      function initWrite() {
+        // ... 생략 ...
+      }
+
+      /* --- 상세 페이지 초기화 (기존 로직 유지) --- */
+      function initDetail() {
+        // ... 생략 ...
+      }
+
+      // 페이지별 초기화 호출
+      const page = location.pathname.split('/').pop();
+      if (page === '/community.html') initList();
+      else if (page === '/write.html') initWrite();
+      else if (page === '/detail.html') initDetail();
+    })();
+    // --------- community.js 끝 ---------
+  </script>
+</body>
+
+</html>

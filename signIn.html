@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+    <title>Bio:ReForm</title>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.header-area.header-sticky');
+            if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+            } else {
+            header.classList.remove('scrolled');
+            }
+        });
+    </script>
+    <style>
+        .main-banner {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+        }
+
+        .video-overlay.header-text {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(35, 45, 57, 0.85);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+        /* 로그인 카드 박스 */
+        .login-card {
+        background-color: rgba(255, 255, 255, 0.07);
+        padding: 60px 50px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        max-width: 450px;
+        color: white;
+        text-align: left;
+        }
+
+        .login-card h2 {
+        text-align: center;
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 40px;
+        color: #fff;
+        }
+
+        .login-card label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        }
+
+        .login-card input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        margin-bottom: 20px;
+        font-size: 14px;
+        }
+
+        .login-card input:focus {
+        outline: 2px solid #ed563b;
+        box-shadow: 0 0 4px rgba(237, 86, 59, 0.4);
+        }
+
+        .login-card .login-btn {
+        width: 100%;
+        padding: 14px;
+        background-color: #ed563b;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+        }
+
+        .login-card .login-btn:hover {
+        background-color: #f9735b;
+        }
+
+        .login-card .signup-link {
+        text-align: center;
+        margin-top: 20px;
+        display: block;
+        font-size: 14px;
+        color: #eee;
+        text-decoration: underline;
+        cursor: pointer;
+        }
+
+        @media (max-width: 500px) {
+        .login-card {
+            padding: 40px 25px;
+        }
+        .login-card h2 {
+            font-size: 36px;
+        }
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="/bioreform/css/bootstrap.min.used-only.css">
+
+    <link rel="stylesheet" type="text/css" href="/bioreform/css/font-awesome.css">
+
+    <link rel="stylesheet" href="/bioreform/css/templatemo-training-studio.css">
+
+    </head>
+    <body>
+    
+    
+    <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- 로고 -->
+            <a href="/bioreform/index.html" class="logo"><em>Bio</em>:<em>Reform</em></a>
+
+            <!-- 메뉴 -->
+            <ul class="nav">
+              <li class="scroll-to-section"><a href="/bioreform/community.html">커뮤니티</a></li>
+              <li class="scroll-to-section"><a href="/bioreform/notice.html">공지사항</a></li>
+              <li class="scroll-to-section"><a href="/bioreform/product-news.html">제품 뉴스</a></li> <!-- ✅ 실제 페이지 연결 -->
+            </ul>
+
+            <!-- 로그인/회원가입 버튼 -->
+            <div class="nav-right">
+              <a href="/bioreform/myPage.html">마이페이지</a>
+              <a href="/bioreform/signIn.html" class="main-button">Sign In</a>
+              <a href="/bioreform/signUp.html" class="main-button">Sign Up</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <div class="main-banner" id="top">
+        <video autoplay muted loop id="bg-video">
+            <source src="/bioreform/images/health-video.mp4" type="video/mp4" />
+        </video>
+
+        <div class="video-overlay header-text">
+            <div class="login-card">
+                <h2>로그인</h2>
+                <form id="login-form">
+                <label for="id">아이디</label>
+                <input type="text" id="id" name="id" required>
+
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit" class="login-btn">로그인</button>
+                </form>
+                <a href="/signup">가입하러가기</a>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+        <!-- ✅ 푸터 -->
+    <footer>
+        <!-- 이메일 구독 -->
+        <div class="newsletter">
+            <h3>이메일로 최신 건강 정보와 할인 소식을 받아보세요!</h3>
+            <input type="email" placeholder="이메일 주소 입력">
+            <button>신청하기</button>
+        </div>
+
+        <div class="footer-top">
+            <!-- 회사 소개 -->
+            <div class="footer-section">
+                <h3>Bio:ReForm</h3>
+                <p>건강한 삶을 위한 최고의 선택! <br> 믿을 수 있는 영양제 정보와 커뮤니티를 제공합니다.</p>
+            </div>
+    
+            <!-- 유용한 링크 -->
+            <div class="footer-section">
+                <h3>회사 정보</h3>
+                <ul>
+                    <li><a href="/company">회사 소개</a></li>
+                    <li><a href="/notice">공지사항</a></li>
+                    <li><a href="#">제휴 프로그램</a></li>
+                </ul>
+            </div>
+    
+            <!-- SNS & 앱 다운로드 -->
+            <div class="footer-section">
+                <h3>팔로우하세요</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="/bioreform/images/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="/bioreform/images/youtube.png" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+    
+        <!-- 저작권 및 정책 -->
+        <div class="footer-bottom">
+            <p>© 2025 Uk-ji. 모든 권리 보유. 모든 권한은 Uk-ji에 있습니다.</p>
+            <ul>
+                <li><a href="#">개인정보 처리방침</a></li>
+                <li><a href="#">이용약관</a></li>
+                <li><a href="#">자주 묻는 질문</a></li>
+            </ul>
+        </div>
+    </footer>
+
+  </body>
+</html>

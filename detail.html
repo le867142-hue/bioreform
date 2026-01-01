@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>게시글 상세 – Bio:ReForm 커뮤니티</title>
+
+  <!-- 외부 템플릿 CSS -->
+  <link rel="stylesheet" href="/bioreform/css/bootstrap.min.used-only.css">
+  <link rel="stylesheet" href="/bioreform/css/templatemo-training-studio.css">
+
+  <!-- inline community.css -->
+  <style>
+    header.header-area {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    body {
+      padding-top: 80px;
+    }
+
+    header, .container {
+      background-color: #ffffff !important;
+    }
+
+    .main-nav .nav li a {
+        transition: color 0.3s !important;
+        color: #000000 !important;
+    }
+
+    .main-nav .nav li a:hover,
+    .header-area.header-sticky.scrolled nav li a:hover {
+        color: #ed563b !important;
+    }
+
+    .community-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .info-box {
+      border: 1px solid #ddd;
+      background: #fafafa;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-box h2 {
+      margin: 0 0 .5rem;
+      font-size: 1.75rem;
+    }
+
+    .info-box p {
+      margin: 0;
+      color: #555 !important;
+    }
+
+    .post-meta {
+      color: #666 !important;
+      font-size: .9rem;
+      margin: .5rem 0;
+    }
+
+    .detail-thumb {
+      max-width: 100%;
+      margin: 1rem 0;
+    }
+
+    .post-content {
+      white-space: pre-wrap;
+      line-height: 1.6;
+    }
+
+    .detail-actions {
+      margin: 1rem 0;
+    }
+
+    .detail-actions button {
+      font-size: 1rem;
+    }
+
+    .comment-section {
+      margin-top: 2rem;
+    }
+
+    .comment-section textarea {
+      width: 100%;
+      height: 100px;
+      padding: .5rem;
+      box-sizing: border-box;
+      margin-bottom: .5rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 헤더 -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <a href="/index.html" class="logo"><em>Bio</em>:<em>Reform</em></a>
+            <ul class="nav">
+              <li><a href="community.html">커뮤니티</a></li>
+              <li><a href="notice.html">공지사항</a></li>
+              <li><a href="product-news.html">제품뉴스</a></li>
+            </ul>
+            <div class="nav-right">
+              <a href="/myPage.html" class="main-button">MyPage</a>
+              <a href="/signIn.html" class="main-button">Sign In</a>
+              <a href="/signUp.html" class="main-button">Sign Up</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 상세 콘텐츠 -->
+  <main class="community-container" id="detail-container">
+  </main>
+
+  <!-- 푸터 -->
+  <footer>
+    <!-- 이메일 구독 -->
+    <div class="newsletter">
+      <h3>이메일로 최신 건강 정보와 할인 소식을 받아보세요!</h3>
+      <input type="email" placeholder="이메일 주소 입력">
+      <button>신청하기</button>
+    </div>
+
+    <div class="footer-top">
+      <!-- 회사 소개 -->
+      <div class="footer-section">
+        <h3>Bio:ReForm</h3>
+        <p>건강한 삶을 위한 최고의 선택! <br> 믿을 수 있는 영양제 정보와 커뮤니티를 제공합니다.</p>
+      </div>
+
+      <!-- 유용한 링크 -->
+      <div class="footer-section">
+        <h3>회사 정보</h3>
+        <ul>
+          <li><a href="/company">회사 소개</a></li>
+          <li><a href="/notice">공지사항</a></li>
+          <li><a href="#">제휴 프로그램</a></li>
+        </ul>
+      </div>
+
+      <!-- SNS & 앱 다운로드 -->
+      <div class="footer-section">
+        <h3>팔로우하세요</h3>
+        <div class="social-icons">
+          <a href="#"><img src="/bioreform/images/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="/bioreform/images/youtube.png" alt="YouTube"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 저작권 및 정책 -->
+    <div class="footer-bottom">
+      <p>© 2025 Uk-ji. 모든 권리 보유. 모든 권한은 Uk-ji에 있습니다.</p>
+      <ul>
+        <li><a href="#">개인정보 처리방침</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">자주 묻는 질문</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- inline community.js (detail 로직) -->
+  <script>
+        window.addEventListener('scroll', function () {
+        const header = document.querySelector('.header-area.header-sticky');
+        if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+        } else {
+        header.classList.remove('scrolled');
+        }
+    });
+    (() => {
+      const storageKey = 'community_posts';
+      let posts = JSON.parse(localStorage.getItem(storageKey) || 'null');
+      function save() { localStorage.setItem(storageKey, JSON.stringify(posts)); }
+      function formatDate(iso) {
+        const d = new Date(iso);
+        const MM = String(d.getMonth() + 1).padStart(2, '0'),
+          DD = String(d.getDate()).padStart(2, '0'),
+          hh = String(d.getHours()).padStart(2, '0'),
+          mm = String(d.getMinutes()).padStart(2, '0');
+        return `${d.getFullYear()}.${MM}.${DD} ${hh}:${mm}`;
+      }
+      const params = new URLSearchParams(location.search),
+        id = Number(params.get('id')),
+        post = posts.find(p => p.id === id),
+        container = document.getElementById('detail-container');
+      if (!post) {
+        container.innerHTML = '<p>존재하지 않는 게시물입니다.</p>';
+        return;
+      }
+      post.views++; save();
+      container.innerHTML = `
+          <div class="info-box">
+            <h2>커뮤니티</h2>
+            <p>건강 관련 정보에 대한 다양한 정보를 나누는 곳입니다.</p>
+          </div>
+        <h2>${post.title}</h2>
+        <p class="post-meta">
+          ${post.category} · ${post.author} · ${formatDate(post.date)} · 조회 ${post.views}
+        </p>
+        ${post.thumbnail ? `<img src="${post.thumbnail}" class="detail-thumb" alt="">` : ''}
+        <div class="post-content">${post.content.replace(/\n/g, '<br>')}</div>
+        <div class="detail-actions">
+          <button id="likeBtn">❤ ${post.likes}</button>
+        </div>
+        <div class="comment-section">
+          <h3>댓글 (${post.comments})</h3>
+          <textarea id="commentInput" placeholder="댓글을 입력하세요"></textarea>
+          <button id="commentSubmit">등록</button>
+        </div>`;
+      document.getElementById('likeBtn').onclick = () => {
+        post.likes++; save();
+        document.getElementById('likeBtn').textContent = `❤ ${post.likes}`;
+      };
+    })();
+  </script>
+</body>
+
+</html>

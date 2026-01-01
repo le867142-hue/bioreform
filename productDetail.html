@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Bio:ReForm</title>
+
+  <!-- 외부 템플릿 CSS -->
+  <link rel="stylesheet" href="/bioreform/css/bootstrap.min.used-only.css">
+  <link rel="stylesheet" href="/bioreform/css/templatemo-training-studio.css">
+
+  <style>
+    body {
+      font-family: 'Pretendard', sans-serif;
+      margin: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    header, .container {
+      background-color: #ffffff !important;
+    }
+
+    .main-nav .nav li a {
+        transition: color 0.3s !important;
+        color: #000000 !important;
+    }
+
+    .main-nav .nav li a:hover,
+    .header-area.header-sticky.scrolled nav li a:hover {
+        color: #ed563b !important;
+    }
+
+    .product-page {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    section {
+      margin-top: 80px;
+      margin-bottom: 50px;
+    }
+
+    section h3 {
+      font-size: 20px;
+      margin-bottom: 15px;
+      border-left: 5px solid #ed563b;
+      padding-left: 10px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: white;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: transform 0.2s;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .product-img {
+      width: 100%;
+      height: 160px;
+      background-color: #eee;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+    }
+
+    .product-name {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .product-brand {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 6px;
+    }
+
+    .product-price {
+      font-size: 16px;
+      font-weight: bold;
+      color: #ed563b;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 헤더 -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <a href="/bioreform/index.html" class="logo"><em>Bio</em>:<em>Reform</em></a>
+            <ul class="nav">
+              <li><a href="/bioreform/community.html">커뮤니티</a></li>
+              <li><a href="/bioreform/notice.html">공지사항</a></li>
+              <li><a href="/bioreform/product-news.html">제품뉴스</a></li>
+            </ul>
+            <div class="nav-right">
+              <a href="/bioreform/myPage.html" class="main-button">MyPage</a>
+              <a href="/bioreform/signIn.html" class="main-button">Sign In</a>
+              <a href="/bioreform/signUp.html" class="main-button">Sign Up</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="product-page">
+    <h2>🔍 “검색어” 검색에 관련된 제품 정보</h2>
+
+    <!-- 네이버 스마트스토어 -->
+    <section>
+      <h3>네이버 스마트스토어</h3>
+      <div class="product-grid">
+        <!-- 예시 12개 -->
+        <div class="product-card">
+          <div class="product-img">이미지</div>
+          <div class="product-name">제품 이름</div>
+          <div class="product-brand">브랜드명</div>
+          <div class="product-price">₩25,000</div>
+        </div>
+        <!-- 반복 -->
+      </div>
+    </section>
+
+    <!-- 옥션 -->
+    <section>
+      <h3>옥션</h3>
+      <div class="product-grid">
+        <!-- 반복 -->
+        <div class="product-card">
+          <div class="product-img">이미지</div>
+          <div class="product-name">제품 이름</div>
+          <div class="product-brand">브랜드명</div>
+          <div class="product-price">₩18,000</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 지마켓 -->
+    <section>
+      <h3>지마켓</h3>
+      <div class="product-grid">
+        <!-- 반복 -->
+        <div class="product-card">
+          <div class="product-img">이미지</div>
+          <div class="product-name">제품 이름</div>
+          <div class="product-brand">브랜드명</div>
+          <div class="product-price">₩30,000</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 -->
+  <footer>
+    <!-- 이메일 구독 -->
+    <div class="newsletter">
+      <h3>이메일로 최신 건강 정보와 할인 소식을 받아보세요!</h3>
+      <input type="email" placeholder="이메일 주소 입력">
+      <button>신청하기</button>
+    </div>
+
+    <div class="footer-top">
+      <!-- 회사 소개 -->
+      <div class="footer-section">
+        <h3>Bio:ReForm</h3>
+        <p>건강한 삶을 위한 최고의 선택! <br> 믿을 수 있는 영양제 정보와 커뮤니티를 제공합니다.</p>
+      </div>
+
+      <!-- 유용한 링크 -->
+      <div class="footer-section">
+        <h3>회사 정보</h3>
+        <ul>
+          <li><a href="/company">회사 소개</a></li>
+          <li><a href="/notice">공지사항</a></li>
+          <li><a href="#">제휴 프로그램</a></li>
+        </ul>
+      </div>
+
+      <!-- SNS & 앱 다운로드 -->
+      <div class="footer-section">
+        <h3>팔로우하세요</h3>
+        <div class="social-icons">
+          <a href="#"><img src="/bioreform/images/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="/bioreform/images/youtube.png" alt="YouTube"></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 저작권 및 정책 -->
+    <div class="footer-bottom">
+      <p>© 2025 Uk-ji. 모든 권리 보유. 모든 권한은 Uk-ji에 있습니다.</p>
+      <ul>
+        <li><a href="#">개인정보 처리방침</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">자주 묻는 질문</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  
+</body>
+
+</html>
